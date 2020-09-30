@@ -4,9 +4,9 @@
  */
 /*
 
-Plugin Name: todolist
+Plugin Name: To Do List
 Plugin URI: http://gawron.me/plugin
-Description: ToDo list is a part of the recruitment process for a my dream job ❤️
+Description: To Do list is a part of the recruitment process for a my dream job ❤️
 Version: 0.1.0
 Author: Artur Gawron
 Author URI: https://gawron.me
@@ -31,3 +31,13 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 Copyright 2020 Artur Gawron.
 */
+
+defined ( 'ABSPATH' ) or die( 'Hey! No direct access!' );
+
+//activation
+require_once plugin_dir_path( __FILE__ ) . 'inc/todolist-activator.php';
+register_activation_hook( __FILE__, array( 'To_do_list_activator', 'activate' ) );
+
+//deactivation
+require_once plugin_dir_path( __FILE__ ) . 'inc/todolist-deactivator.php';
+register_activation_hook( __FILE__, array( 'To_to_list_activator', 'deactivate' ) );
