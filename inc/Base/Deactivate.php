@@ -3,7 +3,7 @@
 /**
  * @package todolist
  */
-namespace Inc;
+namespace Inc\Base;
 
 class Deactivate
 {
