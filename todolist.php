@@ -39,9 +39,22 @@ if ( !class_exists( 'ToDoListPlugin' ) ) {
 
 	class ToDoListPlugin
 	{
+        public $nameplugin;
+
+        function __construct() {
+            $this->nameplugin = plugin_basename( __FILE__ );
+        }
+
 		function register() {
             add_action( 'admin_enqueue_scripts', array( $this, 'enqueue' ) );
             add_action( 'admin_menu', array( $this, 'add_admin_pages' ) );
+            add_filter( "plugin_action_links_$this->nameplugin", array( $this, 'make_list_link' ) );  
+        }
+
+        public function make_list_link( $links ) {
+            $link = '<a href="admin.php?page=todolist_plugin">make a list</a>';
+            array_push( $links, $link );
+            return $links;
         }
         
         public function add_admin_pages() {
