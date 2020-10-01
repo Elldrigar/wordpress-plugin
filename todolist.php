@@ -43,6 +43,21 @@ define( 'PLUGIN_PATH', plugin_dir_path( __FILE__ ) );
 define( 'PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'PLUGIN_NAME', plugin_basename( __FILE__ ) );
 
+use Inc\Base\Activate;
+use Inc\Base\Deagctivate;
+
+function activate_todo_plugin() {
+	Activate::activate();
+}
+
+function deactivate_todo_plugin() {
+	Deactivate::deactivate();
+}
+
+register_activation_hook( __FILE__, 'activate_todo_plugin' );
+register_deactivation_hook( __FILE__, 'deactivate_todo_plugin' );
+
+
 if ( class_exists( 'Inc\\Init' ) ) {
 	Inc\Init::register_services();
 }
