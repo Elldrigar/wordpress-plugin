@@ -13,7 +13,7 @@ window.addEventListener('load', function () {
     todoDiv.classList.add('todo');
 
     const newTodo = document.createElement('li');
-    newTodo.innerText = 'Test';
+    newTodo.innerText = todoInput.value;
     newTodo.classList.add('todo__item');
     todoDiv.appendChild(newTodo);
 
