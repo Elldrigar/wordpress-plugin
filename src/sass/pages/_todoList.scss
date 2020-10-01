@@ -1,0 +1,17 @@
+.wrapper {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.header {
+  min-height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__title {
+    font-size: 1.5rem;
+  }
+}
