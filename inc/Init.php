@@ -10,7 +10,8 @@ final class Init
     public static function get_services() {
         return [
             Pages\Admin::class,
-            Base\Enqueue::class
+            Base\Enqueue::class,
+            Base\TodoLink::class
         ];
     }
 
