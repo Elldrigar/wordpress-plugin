@@ -3,8 +3,9 @@
 /**
  * @package  todolist
  */
+namespace Inc;
 
-class To_do_list_activator
+class Activate
 {
 	public static function activate()
 	{

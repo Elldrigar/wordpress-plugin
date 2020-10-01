@@ -35,6 +35,12 @@ Copyright 2020 Artur Gawron.
 
 defined('ABSPATH') or die('Hey! No direct access!');
 
+if ( file_exists( dirname( __FILE__ ) . '/vendor/autoload.php' ) ) {
+    require_once dirname( __FILE__ ) . '/vendor/autoload.php';
+}
+
+use Inc\Activate;
+
 if ( !class_exists( 'ToDoListPlugin' ) ) {
 
 	class ToDoListPlugin
@@ -80,8 +86,8 @@ if ( !class_exists( 'ToDoListPlugin' ) ) {
 		}
 
 		function activate() {
-			require_once plugin_dir_path( __FILE__ ) . 'inc/todolist-activator.php';
-			To_do_list_activator::activate();
+			// require_once plugin_dir_path( __FILE__ ) . 'inc/todolist-activator.php';
+			Activate::activate();
 		}
 	}
 
