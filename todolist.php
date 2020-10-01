@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @package todolist
  */
@@ -32,12 +33,44 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 Copyright 2020 Artur Gawron.
 */
 
-defined ( 'ABSPATH' ) or die( 'Hey! No direct access!' );
+defined('ABSPATH') or die('Hey! No direct access!');
 
-//activation
-require_once plugin_dir_path( __FILE__ ) . 'inc/todolist-activator.php';
-register_activation_hook( __FILE__, array( 'To_do_list_activator', 'activate' ) );
+if ( !class_exists( 'ToDoListPlugin' ) ) {
 
-//deactivation
-require_once plugin_dir_path( __FILE__ ) . 'inc/todolist-deactivator.php';
-register_activation_hook( __FILE__, array( 'To_to_list_activator', 'deactivate' ) );
+	class ToDoListPlugin
+	{
+		function register() {
+			add_action( 'admin_enqueue_scripts', array( $this, 'enqueue' ) );
+		}
+
+		protected function create_post_type() {
+			add_action( 'init', array( $this, 'custom_post_type' ) );
+		}
+
+		function custom_post_type() {
+			register_post_type( 'book', ['public' => true, 'label' => 'Books'] );
+		}
+
+		function enqueue() {
+			// enqueue all our scripts
+			wp_enqueue_style( 'mypluginstyle', plugins_url( '/assets/mystyle.css', __FILE__ ) );
+			wp_enqueue_script( 'mypluginscript', plugins_url( '/assets/myscript.js', __FILE__ ) );
+		}
+
+		function activate() {
+			require_once plugin_dir_path( __FILE__ ) . 'inc/todolist-activator.php';
+			To_do_list_activator::activate();
+		}
+	}
+
+	$todoPlugin = new ToDoListPlugin();
+	$todoPlugin->register();
+
+	// activation
+	register_activation_hook( __FILE__, array( $todoPlugin, 'activate' ) );
+
+	// deactivation
+	require_once plugin_dir_path( __FILE__ ) . 'inc/todolist-deactivator.php';
+	register_deactivation_hook( __FILE__, array( 'To_do_list_deactivator', 'deactivate' ) );
+
+}
