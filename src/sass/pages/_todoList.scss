@@ -15,3 +15,21 @@
     font-size: 1.5rem;
   }
 }
+.form {
+  &__input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    // border: none !important;
+    background: #ffffff;
+  }
+  &__button {
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    &:hover {
+      color: #4235b8;
+    }
+  }
+}
