@@ -1,13 +1,18 @@
 {
-    "name": "gawron/todolist",
-    "type": "project",
-    "license": "GPL",
-    "authors": [
-        {
-            "name": "Artur Gawron",
-            "email": "artur@gawron.me"
-        }
-    ],
-    "minimum-stability": "dev",
-    "require": {}
+  "name": "gawron/todolist",
+  "type": "project",
+  "license": "GPL",
+  "authors": [
+    {
+      "name": "Artur Gawron",
+      "email": "artur@gawron.me"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "Inc\\": "./inc"
+    }
+  }
 }
