@@ -1,0 +1,13 @@
+{
+    "name": "gawron/todolist",
+    "type": "project",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Artur Gawron",
+            "email": "artur@gawron.me"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
