@@ -13,17 +13,18 @@ window.addEventListener('load', function () {
     todoDiv.classList.add('todo');
 
     const newTodo = document.createElement('li');
-    newTodo.classList.add('todo-item');
+    newTodo.innerText = 'Test';
+    newTodo.classList.add('todo__item');
     todoDiv.appendChild(newTodo);
 
     const completedButton = document.createElement('button');
     completedButton.innerHTML = '<i class="fas fa-check"></i>';
-    completedButton.classList.add('complete-btn');
+    completedButton.classList.add('todo__completeBtn');
     todoDiv.appendChild(completedButton);
 
     const trashButton = document.createElement('button');
     trashButton.innerHTML = '<i class="fas fa-trash"></i>';
-    trashButton.classList.add('complete-btn');
+    trashButton.classList.add('todo__trashBtn');
     todoDiv.appendChild(trashButton);
 
     todoList.appendChild(todoDiv);
