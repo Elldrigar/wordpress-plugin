@@ -44,7 +44,7 @@ define( 'PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 define( 'PLUGIN_NAME', plugin_basename( __FILE__ ) );
 
 use Inc\Base\Activate;
-use Inc\Base\Deagctivate;
+use Inc\Base\Deactivate;
 
 function activate_todo_plugin() {
 	Activate::activate();

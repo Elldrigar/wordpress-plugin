@@ -1,0 +1,38 @@
+{
+  "name": "todo-plugin",
+  "version": "0.1.0",
+  "description": "To Do list plugin for WordPress",
+  "main": "app.js",
+  "dependencies": {
+    "@babel/polyfill": "^7.11.5"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/preset-env": "^7.11.5",
+    "autoprefixer": "^9.8.6",
+    "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^6.1.1",
+    "core-js": "^3.6.5",
+    "css-loader": "^4.3.0",
+    "file-loader": "^6.1.0",
+    "html-webpack-plugin": "^4.5.0",
+    "mini-css-extract-plugin": "^0.11.2",
+    "node-sass": "^4.14.1",
+    "postcss-loader": "^3.0.0",
+    "prettier": "^2.1.2",
+    "sass-loader": "^10.0.2",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --config ./webpack.config.js",
+    "prod": "webpack --config ./webpack.config.js",
+    "dev": "webpack --config ./webpack.config.js"
+  },
+  "author": "Artur gawron",
+  "license": "MIT"
+}
