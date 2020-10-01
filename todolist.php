@@ -40,6 +40,7 @@ if ( file_exists( dirname( __FILE__ ) . '/vendor/autoload.php' ) ) {
 }
 
 use Inc\Activate;
+use Inc\Deactivate;
 
 if ( !class_exists( 'ToDoListPlugin' ) ) {
 
@@ -98,7 +99,7 @@ if ( !class_exists( 'ToDoListPlugin' ) ) {
 	register_activation_hook( __FILE__, array( $todoPlugin, 'activate' ) );
 
 	// deactivation
-	require_once plugin_dir_path( __FILE__ ) . 'inc/todolist-deactivator.php';
-	register_deactivation_hook( __FILE__, array( 'To_do_list_deactivator', 'deactivate' ) );
+	// require_once plugin_dir_path( __FILE__ ) . 'inc/todolist-deactivator.php';
+	register_deactivation_hook( __FILE__, array( 'Deactivate', 'deactivate' ) );
 
 }
