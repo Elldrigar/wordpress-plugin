@@ -3,8 +3,8 @@
         <h1 class="header__title">My To Do List</h1>
     </header>
     <form class="form">
-        <input class="form__input" type="text" />
-        <button class="form__button"type="submit">
+        <input class="form__input" type="text" required>
+        <button class="form__button" type="submit">
             <i class="form__icon fas fa-plus-square"></i>
         </button>   
     </form>
