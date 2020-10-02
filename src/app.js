@@ -20,6 +20,7 @@ window.addEventListener('load', function () {
       newTodo.innerText = todoInput.value;
       newTodo.classList.add('todo__item');
       todoDiv.appendChild(newTodo);
+      todoInput.value = '';
 
       const completedButton = document.createElement('button');
       completedButton.innerHTML = '<i class="fas fa-check"></i>';
@@ -32,7 +33,22 @@ window.addEventListener('load', function () {
       todoDiv.appendChild(trashButton);
 
       todoList.appendChild(todoDiv);
-      todoInput.value = '';
+    }
+  }
+  function deleteTodo(e) {
+    const item = e.target;
+    console.log(item);
+
+    if (item.classList[0] === 'todo__trashBtn') {
+      const todo = item.parentElement;
+      todo.classList.add('fall');
+      todo.addEventListener('transitionend', (e) => {
+        todo.remove();
+      });
+    }
+    if (item.classList[0] === 'todo__completeBtn') {
+      const todo = item.parentElement;
+      todo.classList.toggle('completed');
     }
   }
 });

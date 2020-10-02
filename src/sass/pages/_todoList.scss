@@ -50,6 +50,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: all 1s ease;
   &__item {
     flex: 1;
     width: 200px;
@@ -62,4 +63,19 @@
     font-size: 1.2rem;
     cursor: pointer;
   }
+}
+
+.fa-trash,
+.fa-check {
+  pointer-events: none;
+}
+
+.fall {
+  transform: translateY(10rem) rotateZ(20deg);
+  opacity: 0;
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
 }
