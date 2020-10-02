@@ -21,8 +21,14 @@
 [![LinkedIn][linkedin-shield]][linkedin-url]
 
 <br>
-<h2 align="center"> 🚧 Work in progress 🚧 </h2>
+<h2 align="center"> 🚧 How to Use 🚧 </h2>
 <br>
+
+### use `npm install` -> Dependencies
+
+### use `composer install` -> Vendor autoload PHP
+
+### use `npm run prod` -> Using Webpack to generates Javascript and Css from src folder ✍🏻
 
 [github-url]: https://badgen.net/github/release/Elldrigar/wordpress-plugin?icon=github
 [mit-license-image]: https://badgen.net/badge/license/MIT/blue
