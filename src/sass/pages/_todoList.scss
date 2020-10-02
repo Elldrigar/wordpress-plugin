@@ -4,6 +4,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  &__item {
+    width: 300px;
+    min-height: 500px;
+    padding: 10px;
+  }
 }
 .header {
   min-height: 15vh;
@@ -13,18 +18,21 @@
 
   &__title {
     font-size: 1.5rem;
+    font-weight: 300;
   }
 }
 .form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   &__input {
     padding: 0.5rem;
     font-size: 1rem;
-    // border: none !important;
     background: #ffffff;
   }
   &__button {
     padding: 0.5rem;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     border: none;
     cursor: pointer;
     transition: all 0.2s ease;
@@ -50,18 +58,29 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: all 1s ease;
+  transition: all 0.7s ease;
   &__item {
     flex: 1;
-    width: 200px;
+    width: 220px;
+    margin: 0 12px;
   }
-  &__completeBtn,
-  &__trashBtn {
+  &__button {
     background: #ffffff;
     border: none;
     padding: 0.4rem;
     font-size: 1.2rem;
+    transition: all 0.5s ease;
     cursor: pointer;
+    &--complete {
+      &:hover {
+        color: #1fcf28;
+      }
+    }
+    &--trash {
+      &:hover {
+        color: #da1616;
+      }
+    }
   }
 }
 
@@ -77,5 +96,5 @@
 
 .completed {
   text-decoration: line-through;
-  opacity: 0.5;
+  opacity: 0.2;
 }

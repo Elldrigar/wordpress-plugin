@@ -7,7 +7,7 @@
 
 Plugin Name: To Do List
 Plugin URI: http://gawron.me/plugin
-Description: To Do list is a part of the recruitment process for a my dream job ❤️
+Description: To Do list is a part of the recruitment process ❤️
 Version: 0.1.0
 Author: Artur Gawron
 Author URI: https://gawron.me

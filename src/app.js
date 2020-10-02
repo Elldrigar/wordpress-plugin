@@ -7,7 +7,7 @@ window.addEventListener('load', function () {
 
   todoButton.addEventListener('click', addTodo);
   todoList.addEventListener('click', deleteTodo);
-  //   document.addEventListener('DOMContentLoaded', getTodos);
+
   getTodos();
   function addTodo(event) {
     if (todoInput.value === '') {
@@ -26,12 +26,14 @@ window.addEventListener('load', function () {
 
       const completedButton = document.createElement('button');
       completedButton.innerHTML = '<i class="fas fa-check"></i>';
-      completedButton.classList.add('todo__completeBtn');
+      completedButton.classList.add('todo__button');
+      completedButton.classList.add('todo__button--complete');
       todoDiv.appendChild(completedButton);
 
       const trashButton = document.createElement('button');
       trashButton.innerHTML = '<i class="fas fa-trash"></i>';
-      trashButton.classList.add('todo__trashBtn');
+      trashButton.classList.add('todo__button');
+      trashButton.classList.add('todo__button--trash');
       todoDiv.appendChild(trashButton);
 
       todoList.appendChild(todoDiv);
@@ -39,9 +41,8 @@ window.addEventListener('load', function () {
   }
   function deleteTodo(e) {
     const item = e.target;
-    console.log(item);
 
-    if (item.classList[0] === 'todo__trashBtn') {
+    if (item.classList[1] === 'todo__button--trash') {
       const todo = item.parentElement;
       todo.classList.add('fall');
       removeLocalTodos(todo);
@@ -49,7 +50,7 @@ window.addEventListener('load', function () {
         todo.remove();
       });
     }
-    if (item.classList[0] === 'todo__completeBtn') {
+    if (item.classList[1] === 'todo__button--complete') {
       const todo = item.parentElement;
       todo.classList.toggle('completed');
     }
@@ -96,12 +97,14 @@ window.addEventListener('load', function () {
       //Create Completed Button
       const completedButton = document.createElement('button');
       completedButton.innerHTML = `<i class="fas fa-check"></i>`;
-      completedButton.classList.add('todo__completeBtn');
+      completedButton.classList.add('todo__button');
+      completedButton.classList.add('todo__button--complete');
       todoDiv.appendChild(completedButton);
       //Create trash button
       const trashButton = document.createElement('button');
       trashButton.innerHTML = `<i class="fas fa-trash"></i>`;
-      trashButton.classList.add('todo__trashBtn');
+      trashButton.classList.add('todo__button');
+      trashButton.classList.add('todo__button--trash');
       todoDiv.appendChild(trashButton);
       //attach final Todo
       todoList.appendChild(todoDiv);
