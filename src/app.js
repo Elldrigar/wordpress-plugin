@@ -18,6 +18,7 @@ window.addEventListener('load', function () {
 
       const newTodo = document.createElement('li');
       newTodo.innerText = todoInput.value;
+      saveLocalTodos(todoInput.value);
       newTodo.classList.add('todo__item');
       todoDiv.appendChild(newTodo);
       todoInput.value = '';
@@ -42,6 +43,7 @@ window.addEventListener('load', function () {
     if (item.classList[0] === 'todo__trashBtn') {
       const todo = item.parentElement;
       todo.classList.add('fall');
+      removeLocalTodos(todo);
       todo.addEventListener('transitionend', (e) => {
         todo.remove();
       });
@@ -50,5 +52,26 @@ window.addEventListener('load', function () {
       const todo = item.parentElement;
       todo.classList.toggle('completed');
     }
+  }
+  function saveLocalTodos(todo) {
+    let todos;
+    if (localStorage.getItem('todos') === null) {
+      todos = [];
+    } else {
+      todos = JSON.parse(localStorage.getItem('todos'));
+    }
+    todos.push(todo);
+    localStorage.setItem('todos', JSON.stringify(todos));
+  }
+  function removeLocalTodos(todo) {
+    let todos;
+    if (localStorage.getItem('todos') === null) {
+      todos = [];
+    } else {
+      todos = JSON.parse(localStorage.getItem('todos'));
+    }
+    const todoIndex = todo.children[0].innerText;
+    todos.splice(todos.indexOf(todoIndex), 1);
+    localStorage.setItem('todos', JSON.stringify(todos));
   }
 });
